@@ -1,1 +1,1 @@
-# tecnicasAlgoritmicas
+# Técnicas Algorítmicas
