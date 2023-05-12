@@ -9,6 +9,10 @@ public class KP {
      * de los valores transportados
      * La capacidad maxima de la mochila es M ≥ 0
      */
+    static int (int W, int v[], int p[], int n) {
+        return n;
+    }
+
 
 
 }
