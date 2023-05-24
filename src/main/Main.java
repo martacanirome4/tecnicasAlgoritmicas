@@ -13,7 +13,7 @@ public class Main {
         int capacity = 8;
 
         int maxValue = KP.knapsackDP(weights, values, numItems, capacity);
-        System.out.println("Maximum value: " + maxValue);
+        System.out.println("The maximum possible value that can be obtained for a bag with "+numItems+" items and capacity of "+capacity+" is: "+maxValue);
 
         // MED algorithm
         String s = "marta";
