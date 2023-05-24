@@ -8,7 +8,7 @@ public class Main {
         int numItems = 4;
         int capacity = 8;
 
-        int maxValue = knapsackDP(weights, values, numItems, capacity);
+        int maxValue = KP.knapsackDP(weights, values, numItems, capacity);
         System.out.println("Maximum value: " + maxValue);
     }
 

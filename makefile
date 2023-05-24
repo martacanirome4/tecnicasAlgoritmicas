@@ -1,5 +1,5 @@
 P=Main
-MAIN_CLASS=aplicacion.$(P)
+MAIN_CLASS=main.$(P)
 SRC_DIR=./src
 OUT_DIR=bin
 LIB_DIR=./lib
