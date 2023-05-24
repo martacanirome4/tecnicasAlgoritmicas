@@ -1,6 +1,7 @@
 package main;
 import algorithms.KP;
 import algorithms.MED;
+import algorithms.FIB;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,6 +23,12 @@ public class Main {
 
         int ans = ob.editDistance(s, t);
         System.out.println("The total number of operations to convert "+ s +" to "+ t +" is: " + ans);
+
+        // Fibonacci algorithm
+        int n = 10;
+        FIB ob2 = new FIB();
+        long fib = ob2.fibonacci(n);
+        System.out.println("The number at position " + n + " in the Fibonnaci sequence is: " + fib);
     }
 
 }
