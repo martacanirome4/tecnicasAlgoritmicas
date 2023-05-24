@@ -25,7 +25,7 @@ public class KP {
      * @return el valor máximo que se puede obtener seleccionando elementos de la matriz dentro de la capacidad de peso,
      * que se almacena en `m[n][W]`
      */
-    int knapsackDP(int[] w, int[] v, int n, int W) {
+    public static int knapsackDP(int[] w, int[] v, int n, int W) {
         if (n <= 0 || W <= 0) {
             return 0;
         }
