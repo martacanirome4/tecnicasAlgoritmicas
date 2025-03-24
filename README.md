@@ -1,34 +1,103 @@
-# Técnicas Algorítmicas - Algoritmos de programación dinámica
+# 🧮 Técnicas Algorítmicas - Programación Dinámica
 
-Este repositorio contiene implementaciones de tres algoritmos de programación dinámica: La secuencia de Fibonacci, El problema de la mochila y El problema de distancia mínima de edición.
+![Java](https://img.shields.io/badge/language-Java-orange)
+![License](https://img.shields.io/badge/license-Apache_2.0-lightgrey)
 
-## Secuencia Fibonacci
+### 📊 Este repositorio contiene implementaciones prácticas de **programación dinámica** para resolver problemas clásicos de optimización y secuencias.
 
-La sucesión de Fibonacci es una serie de números en los que cada número es la suma de los dos anteriores. En este repositorio, hemos implementado un enfoque de programación dinámica para calcular de manera eficiente los números de Fibonacci hasta una posición determinada.
+---
 
-La implementación está disponible en el archivo `FIB.java`. Utiliza una matriz para almacenar números de Fibonacci previamente calculados, evitando cálculos redundantes y brindando una solución optimizada.
+## 📂 Contenido
 
-## Problema de la mochila
+1. 🌀 **Fibonacci** – Cálculo eficiente de la sucesión.
+2. 🎒 **Problema de la Mochila (0/1)** – Optimización del valor en espacio limitado.
+3. ✍️ **Distancia Mínima de Edición** – Transformación óptima de cadenas.
 
-El problema de la mochila es un problema de optimización clásico que consiste en seleccionar elementos de un conjunto para maximizar el valor total y mantener el peso total dentro de un límite determinado. La implementación en este repositorio resuelve el problema de la mochila 0/1 usando programación dinámica.
+---
 
-La implementación está disponible en el archivo `KP.java`. Utiliza un enfoque de programación dinámica para encontrar de manera eficiente el valor máximo que se puede lograr seleccionando elementos, teniendo en cuenta sus pesos y valores.
+## 🌀 Secuencia Fibonacci
 
-## Distancia mínima Editar
+La **sucesión de Fibonacci** es una serie donde cada número es la suma de los dos anteriores.  
+Implementación: `FIB.java`  
+🔹 Usa **memorización** con un array para evitar cálculos redundantes.  
+🔹 Complejidad reducida a **O(n)**.
 
-El problema de edición de distancia mínima implica encontrar el número mínimo de operaciones (inserciones, eliminaciones, sustituciones) necesarias para convertir una cadena en otra. Se ha implementado una solución de programación dinámica para calcular de manera eficiente la distancia mínima de edición entre dos cadenas.
+```java
+fib[0] = 0;
+fib[1] = 1;
+for (int i = 2; i <= n; i++) {
+    fib[i] = fib[i-1] + fib[i-2];
+}
+```
 
-La implementación está disponible en el archivo `MED.java`. Utiliza un enfoque de programación dinámica eficiente en el espacio para calcular el número mínimo de operaciones requeridas para transformar una cadena en otra.
+---
 
-## Uso
+## 🎒 Problema de la Mochila (0/1)
 
-Cada implementación de algoritmo se puede compilar y ejecutar individualmente. El repositorio incluye código de muestra en los archivos respectivos para demostrar cómo usar los algoritmos desde la clase 'Main'.
+Dado un conjunto de objetos con **pesos y valores**, el objetivo es maximizar el valor total sin exceder la capacidad de la mochila.
 
-Para compilar y ejecutar los algoritmos, asegúrese de tener instalado el Kit de desarrollo de Java (JDK) en su sistema. Utilice cualquier IDE de Java o herramientas de línea de comandos para compilar y ejecutar los archivos individuales.
-Como se especifica en el archivo 'makefile' incluido, los pasos para compilar y ejecutar el proyecto son los siguientes:
-1. Abra una ventana de terminal
-2. Clone este repositorio (con git clone <url>)
-3. Navege hasta el repositorio en su sistema local
-4. Ejecute el comando: make compilar
-5. Ejecute el comando: make ejecutar
-El programa imprimirá los resultados por terminal.
+Implementación: `KP.java`  
+🔹 Algoritmo **bottom-up** con tabla de DP.  
+🔹 Complejidad: **O(n·W)** donde n = objetos, W = capacidad.
+
+> Usa tabla `dp[i][w]` que guarda el valor máximo para i objetos y capacidad w.
+
+---
+
+## ✍️ Distancia Mínima de Edición
+
+Calcula el **mínimo número de operaciones** (insertar, eliminar, sustituir) para transformar una cadena en otra.
+
+Implementación: `MED.java`  
+🔹 Tabla de DP: `dp[i][j]` = distancia entre los primeros i y j caracteres.  
+🔹 Complejidad: **O(m·n)** para cadenas de longitud m y n.
+
+```java
+if (s1.charAt(i) == s2.charAt(j)) {
+    dp[i][j] = dp[i-1][j-1];
+} else {
+    dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]);
+}
+```
+
+---
+
+## 🛠️ Uso
+
+Compilar y ejecutar desde terminal (requiere Java JDK):
+
+```bash
+git clone <repo-url>
+cd <repositorio>
+make compilar
+make ejecutar
+```
+
+🔸 Los resultados se mostrarán por consola.
+
+> También puedes usar cualquier IDE (Eclipse, IntelliJ) para ejecutar los archivos individuales.
+
+---
+
+## 📚 Aprendizaje Clave
+
+| Algoritmo                | Idea Principal                    | DP Técnica             |
+|-------------------------|-----------------------------------|------------------------|
+| Fibonacci               | Subproblemas solapados            | Memorización / Tablas  |
+| Mochila 0/1             | Máximo valor sin exceder peso     | Bottom-up tabular      |
+| Distancia Edición       | Transformar cadena → cadena       | Tabla con min operaciones |
+
+> La programación dinámica permite **eficiencia** y evita cálculos repetidos.
+
+---
+
+## 👩‍💻 Autora
+
+Marta Canino Romero – 2023  
+[GitHub](https://github.com/martacanirome4)
+
+---
+
+## 📄 Licencia
+
+Licensed under the Apache License 2.0 – [Ver licencia](http://www.apache.org/licenses/LICENSE-2.0)
